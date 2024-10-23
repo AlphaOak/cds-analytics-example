@@ -1,0 +1,21 @@
+{
+  "name": "@alphaoak/cds-analytics-example",
+  "version": "1.0.0",
+  "description": "An example of how to create an analytical list page.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlphaOak/cds-analytics-example.git"},
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "@sap/cds": "^8",
+    "express": "^4"
+  },
+  "devDependencies": {
+    "@cap-js/sqlite": "^1",
+    "@cap-js/cds-types": "^0.6"
+  },
+  "scripts": {
+    "start": "cds-serve"
+  }
+}
