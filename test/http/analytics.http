@@ -1,0 +1,15 @@
+@server=http://localhost:4004
+@service=/odata/v4/ana
+
+
+### Check if Workorders entity is accessible
+GET {{server}}{{service}}/Workorders?$expand=priority,reportingType,costCurrency
+
+
+### Check if Priorities entity is accessible
+GET {{server}}{{service}}/Priorities?$expand=texts
+
+### Check if Reportingtypes entity is accessible
+GET {{server}}{{service}}/ReportingTypes?$expand=texts
+
+

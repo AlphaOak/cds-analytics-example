@@ -1,0 +1,6 @@
+ID,workorderId,description,priority_ID,reportingType_ID,cost,costCurrency_code
+b8828b34-5794-48e9-87ae-bebaf5a0a331,"400001","Transformer Blown",33be4805-5ab0-4137-ab0f-4085b89710ff,79205785-136f-4925-b561-e57b0ebabf11,6000,USD
+38d418bf-a9f5-405d-af9d-a1d599c28430,"400002","Power is out",33be4805-5ab0-4137-ab0f-4085b89710ff,b094b745-da84-405e-8cbc-3ccb7b9b736d,5000,USD
+463db9e9-286a-4c7e-a464-2225135a2c0b,"400003","Electric Meter Inspection",b1951e34-4701-4d3b-bac4-49bb29727d6b,50660b18-d975-4aa5-b08b-0c90f0591b2b,110,USD
+3d904c76-3bb9-4d5e-bfda-715fb55073bd,"400004","Perform preventive pump maintenance",cc1a33a2-26c7-4d6f-b752-b9121d2e9aef,50660b18-d975-4aa5-b08b-0c90f0591b2b,625,USD
+
