@@ -1,6 +1,8 @@
 @server=http://localhost:4004
 @service=/odata/v4/ana
 
+### Check if AnalyticsWos entity is accessible
+GET {{server}}{{service}}/AnalyticsWos
 
 ### Check if Workorders entity is accessible
 GET {{server}}{{service}}/Workorders?$expand=priority,reportingType,costCurrency

@@ -1,0 +1,162 @@
+{
+  "_version": "1.65.0",
+  "sap.app": {
+    "id": "ao.samples.ui.appsample",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:alp",
+      "version": "1.15.2",
+      "toolsId": "b7127473-8d3c-4ff4-b654-b14d710c4527"
+    },
+    "dataSources": {
+      "mainService": {
+        "uri": "/odata/v4/ana/",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "odataVersion": "4.0"
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.129.2",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {},
+        "sap.fe.templates": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "ao.samples.ui.appsample.i18n.i18n"
+        }
+      },
+      "": {
+        "dataSource": "mainService",
+        "preload": true,
+        "settings": {
+          "operationMode": "Server",
+          "autoExpandSelect": true,
+          "earlyRequests": true
+        }
+      },
+      "@i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "uri": "i18n/i18n.properties"
+      }
+    },
+    "resources": {
+      "css": []
+    },
+    "routing": {
+      "config": {},
+      "routes": [
+        {
+          "pattern": ":?query:",
+          "name": "AnalyticsWosList",
+          "target": "AnalyticsWosList"
+        },
+        {
+          "pattern": "AnalyticsWos({key}):?query:",
+          "name": "AnalyticsWosObjectPage",
+          "target": "AnalyticsWosObjectPage"
+        }
+      ],
+      "targets": {
+        "AnalyticsWosList": {
+          "type": "Component",
+          "id": "AnalyticsWosList",
+          "name": "sap.fe.templates.ListReport",
+          "options": {
+            "settings": {
+              "contextPath": "/AnalyticsWos",
+              "variantManagement": "Page",
+              "navigation": {
+                "AnalyticsWos": {
+                  "detail": {
+                    "route": "AnalyticsWosObjectPage"
+                  }
+                }
+              },
+              "controlConfiguration": {
+                "@com.sap.vocabularies.UI.v1.LineItem": {
+                  "tableSettings": {
+                    "type": "AnalyticalTable",
+                    "selectionMode": "Auto",
+                    "enableExport": true,
+                    "selectAll": true
+                  }
+                }
+              },
+              "views": {
+                "paths": [
+                  {
+                    "primary": [
+                      {
+                        "annotationPath": "com.sap.vocabularies.UI.v1.PresentationVariant"
+                      }
+                    ],
+                    "secondary": [
+                      {
+                        "annotationPath": "com.sap.vocabularies.UI.v1.LineItem"
+                      }
+                    ],
+                    "defaultPath": "both"
+                  }
+                ]
+              },
+              "initialLoad": "Enabled"
+            }
+          }
+        },
+        "AnalyticsWosObjectPage": {
+          "type": "Component",
+          "id": "AnalyticsWosObjectPage",
+          "name": "sap.fe.templates.ObjectPage",
+          "options": {
+            "settings": {
+              "editableHeaderContent": false,
+              "contextPath": "/AnalyticsWos"
+            }
+          }
+        }
+      }
+    }
+  },
+  "sap.fiori": {
+    "registrationIds": [],
+    "archeType": "analytical"
+  }
+}
